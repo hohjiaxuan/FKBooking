@@ -38,7 +38,7 @@ $stmt=$mysqli->prepare("SELECT username,email,password,id FROM technician WHERE 
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin login</title>
+    <title>Technician login</title>
 
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">

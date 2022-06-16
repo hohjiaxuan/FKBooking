@@ -56,18 +56,18 @@ echo"<script>alert('Admin details has been updated.');</script>";
 									<div class="panel-heading">Admin Details</div>
 									<div class="panel-body">
 										<form method="post" class="form-horizontal">
-	<?php	
-	$id=$_GET['id'];
-	$ret="select * from admin where id=?";
-		$stmt= $mysqli->prepare($ret) ;
-	 $stmt->bind_param('i',$id);
-	 $stmt->execute() ;//ok
-	 $res=$stmt->get_result();
-	 //$cnt=1;
-	   while($row=$res->fetch_object())
-	  {
-	  	?>
-						<div class="hr-dashed"></div>
+										<?php	
+										$id=$_GET['id'];
+										$ret="select * from admin where id=?";
+											$stmt= $mysqli->prepare($ret) ;
+										$stmt->bind_param('i',$id);
+										$stmt->execute() ;//ok
+										$res=$stmt->get_result();
+										//$cnt=1;
+										while($row=$res->fetch_object())
+										{
+											?>
+										<div class="hr-dashed"></div>
 											<div class="form-group">
 												<label class="col-sm-2 control-label">Admin ID :</label>
 												<div class="col-sm-8">

@@ -131,6 +131,51 @@ check_login();
 										</div>
 									</div>
 
+
+
+									<div class="col-md-3">
+										<div class="panel panel-default">
+											<div class="panel-body bk-success text-light">
+												<div class="stat-panel text-center">
+
+												<?php
+												$result2 ="SELECT count(status) FROM room WHERE status = 'ASSIGNED' ";
+												$stmt2 = $mysqli->prepare($result2);
+												$stmt2->execute();
+												$stmt2->bind_result($count2);
+												$stmt2->fetch();
+												$stmt2->close();
+												?>
+
+													<div class="stat-panel-number h1 "><?php echo $count2;?></div>
+													<div class="stat-panel-title text-uppercase">TOTAL ROOM ASSIGNED</div>
+												</div>
+											</div>
+											<a href="assigned.php" class="block-anchor panel-footer text-center">See All &nbsp; <i class="fa fa-arrow-right"></i></a>
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<div class="panel panel-default">
+											<div class="panel-body bk-success text-light">
+												<div class="stat-panel text-center">
+
+												<?php
+												$result2 ="SELECT count(status) FROM room WHERE status = 'READY' ";
+												$stmt2 = $mysqli->prepare($result2);
+												$stmt2->execute();
+												$stmt2->bind_result($count2);
+												$stmt2->fetch();
+												$stmt2->close();
+												?>
+
+													<div class="stat-panel-number h1 "><?php echo $count2;?></div>
+													<div class="stat-panel-title text-uppercase">TOTAL ROOM READY TO USE</div>
+												</div>
+											</div>
+											<a href="ready.php" class="block-anchor panel-footer text-center">See All &nbsp; <i class="fa fa-arrow-right"></i></a>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

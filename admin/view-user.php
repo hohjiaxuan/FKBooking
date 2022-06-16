@@ -6,7 +6,6 @@ check_login();
 //code for add courses
 if($_POST['submit'])
 {
-$regNo=$_POST['regNo'];
 $firstName=$_POST['firstName'];
 $middleName=$_POST['middleName'];
 $lastName=$_POST['lastName'];
@@ -15,14 +14,14 @@ $contactNo=$_POST['contactNo'];
 $email=$_POST['email'];
 $password=$_POST['password'];
 
-$query="insert into userregistration (regNo, firstName, middleName, lastName, gender, contactNo, email, password) values(?,?,?,?,?,?,?,?)";
+$query="insert into userregistration (firstName, middleName, lastName, gender, contactNo, email, password) values(?,?,?,?,?,?,?)";
 $stmt = $mysqli->prepare($query);
-$rc=$stmt->bind_param('sssssiss',$regNo,$firstName,$middleName,$lastName,$gender,$contactNo,$email,$password);
+$rc=$stmt->bind_param('ssssiss',$firstName,$middleName,$lastName,$gender,$contactNo,$email,$password);
 $stmt->execute();
 echo"<script>alert('A new user has been added successfully');</script>";
 }
-
 ?>
+
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -41,9 +40,10 @@ echo"<script>alert('A new user has been added successfully');</script>";
 	<link rel="stylesheet" href="css/fileinput.min.css">
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
-<script type="text/javascript" src="js/jquery-1.11.3-jquery.min.js"></script>
-<script type="text/javascript" src="js/validation.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.3-jquery.min.js"></script>
+	<script type="text/javascript" src="js/validation.min.js"></script>
 </head>
+
 <body>
 	<?php include('includes/header.php');?>
 	<div class="ts-main-content">
@@ -63,14 +63,6 @@ echo"<script>alert('A new user has been added successfully');</script>";
 									<div class="panel-body">
 										<form method="post" class="form-horizontal">
 											
-											<div class="hr-dashed"></div>
-											<div class="form-group">
-												<label class="col-sm-2 control-label">Reg. no. :</label>
-												<div class="col-sm-8">
-													<input type="text" value="" name="regNo"  class="form-control">
-												</div>
-											</div>
-
 											<div class="form-group">
 												<label class="col-sm-2 control-label">First name :</label>
 												<div class="col-sm-8">

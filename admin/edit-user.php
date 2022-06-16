@@ -6,7 +6,6 @@ check_login();
 //code for add courses
 if($_POST['submit'])
 {
-$regNo=$_POST['regNo'];
 $firstName=$_POST['firstName'];
 $middleName=$_POST['middleName'];
 $lastName=$_POST['lastName'];
@@ -15,14 +14,14 @@ $contactNo=$_POST['contactNo'];
 $email=$_POST['email'];
 $password=$_POST['password'];
 $id=$_GET['id'];
-$query="update userregistration set regNo=?, firstName=?, middleName=?, lastName=?, gender=?, contactNo=?, email=?, password=? where id=?";
+$query="update userregistration set firstName=?, middleName=?, lastName=?, gender=?, contactNo=?, email=?, password=? where id=?";
 $stmt = $mysqli->prepare($query);
-$rc=$stmt->bind_param('sssssissi',$regNo,$firstName,$middleName,$lastName,$gender,$contactNo,$email,$password,$id);
+$rc=$stmt->bind_param('ssssissi',$firstName,$middleName,$lastName,$gender,$contactNo,$email,$password,$id);
 $stmt->execute();
 echo"<script>alert('User details has been updated.');</script>";
 }
-
 ?>
+
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -41,8 +40,8 @@ echo"<script>alert('User details has been updated.');</script>";
 	<link rel="stylesheet" href="css/fileinput.min.css">
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
-<script type="text/javascript" src="js/jquery-1.11.3-jquery.min.js"></script>
-<script type="text/javascript" src="js/validation.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.3-jquery.min.js"></script>
+	<script type="text/javascript" src="js/validation.min.js"></script>
 </head>
 <body>
 	<?php include('includes/header.php');?>
@@ -62,17 +61,17 @@ echo"<script>alert('User details has been updated.');</script>";
 									<div class="panel-heading">User Details</div>
 									<div class="panel-body">
 										<form method="post" class="form-horizontal">
-	<?php	
-	$id=$_GET['id'];
-	$ret="select * from userregistration where id=?";
-		$stmt= $mysqli->prepare($ret) ;
-	 $stmt->bind_param('i',$id);
-	 $stmt->execute() ;//ok
-	 $res=$stmt->get_result();
-	 //$cnt=1;
-	   while($row=$res->fetch_object())
-	  {
-	  	?>
+											<?php	
+											$id=$_GET['id'];
+											$ret="select * from userregistration where id=?";
+												$stmt= $mysqli->prepare($ret) ;
+											$stmt->bind_param('i',$id);
+											$stmt->execute() ;//ok
+											$res=$stmt->get_result();
+											//$cnt=1;
+											while($row=$res->fetch_object())
+											{
+												?>
 						<div class="hr-dashed"></div>
 						<div class="row">
 							<div class="col-md-12">
@@ -81,14 +80,6 @@ echo"<script>alert('User details has been updated.');</script>";
 									<div class="panel-body">
 										<form method="post" class="form-horizontal">
 											
-											<div class="hr-dashed"></div>
-											<div class="form-group">
-												<label class="col-sm-2 control-label">Reg. no. :</label>
-												<div class="col-sm-8">
-													<input type="text" value="<?php echo $row->regNo;?>" name="regNo"  class="form-control">
-												</div>
-											</div>
-
 											<div class="form-group">
 												<label class="col-sm-2 control-label">First name :</label>
 												<div class="col-sm-8">

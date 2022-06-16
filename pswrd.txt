@@ -1,6 +1,6 @@
 Admin
-:admin
-:admin123
+:khairul16
+:khai123456
 
 Manager
 :SyazaEyka

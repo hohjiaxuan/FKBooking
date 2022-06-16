@@ -15,6 +15,7 @@ if(isset($_GET['del']))
         echo "<script>alert('Data Deleted');</script>" ;
 }
 ?>
+
 <!doctype html>
 <html lang="en" class="no-js">
 
@@ -34,18 +35,17 @@ if(isset($_GET['del']))
 	<link rel="stylesheet" href="css/fileinput.min.css">
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<link rel="stylesheet" href="css/style.css">
-<script language="javascript" type="text/javascript">
-var popUpWin=0;
-function popUpWindow(URLStr, left, top, width, height)
-{
- if(popUpWin)
-{
-if(!popUpWin.closed) popUpWin.close();
-}
-popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=yes,width='+510+',height='+430+',left='+left+', top='+top+',screenX='+left+',screenY='+top+'');
-}
-</script>
-
+	<script language="javascript" type="text/javascript">
+	var popUpWin=0;
+	function popUpWindow(URLStr, left, top, width, height)
+	{
+	if(popUpWin)
+	{
+	if(!popUpWin.closed) popUpWin.close();
+	}
+	popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=yes,width='+510+',height='+430+',left='+left+', top='+top+',screenX='+left+',screenY='+top+'');
+	}
+	</script>
 </head>
 
 <body>
@@ -69,7 +69,6 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 										<tr>
 											<th>No.</th>
 											<th>id</th>
-											<th>Reg No</th>
 											<th>First Name </th>
 											<th>Middle Name</th>
 											<th>Last Name </th>
@@ -97,7 +96,6 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 													?>
 											<tr><td><?php echo $cnt;;?></td>
 											<td><?php echo $row->id;?></td>
-											<td><?php echo $row->regNo;?></td>
 											<td><?php echo $row->firstName;?></td>
 											<td><?php echo $row->middleName;?></td>
 											<td><?php echo $row->lastName;?></td>

@@ -12,7 +12,7 @@ $stmt=$mysqli->prepare("SELECT email,contactNo,password FROM userregistration WH
 				$rs=$stmt->fetch();
 				if($rs)
 				{
-				$pwd=$password;				
+				$password=$password;				
 				}
 
 				else
@@ -54,7 +54,7 @@ $stmt=$mysqli->prepare("SELECT email,contactNo,password FROM userregistration WH
 							<div class="col-md-8 col-md-offset-2">
 							<?php if(isset($_POST['login']))
 { ?>
-					<p>Yuor Password is <?php echo $pwd;?><br> Change the Password After login</p>
+					<p>Yuor Password is <?php echo $password;?><br> Change the Password After login</p>
 					<?php }  ?>
 								<form action="" class="mt" method="post">
 									<label for="" class="text-uppercase text-sm">Your Email</label>

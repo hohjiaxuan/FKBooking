@@ -20,7 +20,7 @@ $query="update setup set Name=?, No_ID=?, Phone_Number=?, Date=?, Faculty=?, Roo
 $stmt = $mysqli->prepare($query);
 $rc=$stmt->bind_param('sssssssi',$Name, $No_ID, $Phone_Number, $Date, $Faculty, $Room_Name, $Requirement, $id);
 $stmt->execute();
-echo"<script>alert('Course has been Updated successfully');</script>";
+echo"<script>alert('Booking has been Updated successfully');</script>";
 }
 
 ?>
