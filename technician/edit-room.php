@@ -139,7 +139,7 @@ echo "The date update " . date("Y-m-d");?>" disabled >
 <?php } ?>
 												<div class="col-sm-8 col-sm-offset-2">
 													
-													<input class="btn btn-primary" type="submit" name="update" value="Update ">
+													<input class="btn btn-primary" type="submit" name="update" value="Update Course">
 												</div>
 											</div>
 

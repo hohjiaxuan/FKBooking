@@ -19,7 +19,7 @@ $stmt=$mysqli->prepare("SELECT username,email,password,id FROM technician WHERE 
    // $stmtins = $mysqli->prepare($insert);
    // $stmtins->bind_param('sH',$id,$uip);
     //$res=$stmtins->execute();
-                    header("location:admin-profile.php");
+                    header("location:technician-profile.php");
                 }
 
                 else
@@ -38,7 +38,7 @@ $stmt=$mysqli->prepare("SELECT username,email,password,id FROM technician WHERE 
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Technician login</title>
+    <title>Admin login</title>
 
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -67,9 +67,7 @@ $stmt=$mysqli->prepare("SELECT username,email,password,id FROM technician WHERE 
                                     <input type="password" placeholder="Password" name="password" class="form-control mb">
                                     <input type="submit" name="login" class="btn btn-primary btn-block" value="login" >
                                 </form> <br>
-                                <div class="text-center text-light">
-                                    <a href="faris-technician/index.php" class="text-uppercase text-sm">Other Technicians</a>
-                                </div>
+
                             </div>
                         </div>
                     </div>

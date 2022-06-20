@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2022 at 04:36 PM
+-- Generation Time: Jun 20, 2022 at 12:20 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.0
 
@@ -41,9 +41,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `email`, `password`, `reg_date`, `updation_date`) VALUES
-(1, 'admin', 'admintest@gmail.com', 'admintest1234', '2016-04-04 20:31:45', '2016-04-17'),
+(1, 'admin', 'admintest@gmail.com', 'admin123', '2016-04-04 20:31:45', '2016-04-17'),
 (16, 'khairul16', 'khairul16@gmail.com', 'khai123456', '2022-06-05 03:03:10', '2022-06-05'),
-(17, 'SyazaEyka', 'syazlaikha8@gmail.com', 'syaza123', '2022-06-12 06:24:05', '0000-00-00');
+(17, 'SyazaEyka', 'syazlaikha8@gmail.com', 'syaza123', '2022-06-12 06:24:05', '0000-00-00'),
+(20, 'hitzo', 'hitzo@gmail.com', 'hitzo123456', '2022-06-13 16:36:17', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -65,8 +66,7 @@ CREATE TABLE `complaint` (
 
 INSERT INTO `complaint` (`id`, `date`, `complaintType`, `complaintDes`, `complaintStatus`) VALUES
 (4, '2022-05-30 19:54:17', 'Damaged Equipment', 'The door was damaged', 'Solved'),
-(8, '2022-05-31 01:25:13', 'Damaged Equipment', 'Damaged equipment', 'In Investigation'),
-(9, '2022-06-04 14:19:49', 'Improper Setup', 'Aircond not function', 'In Investigation'),
+(9, '2022-06-04 14:19:49', 'Improper Setup', 'Aircond not function', 'Solved'),
 (11, '2022-06-04 17:10:11', 'Improper Setup', 'ERROR', 'Solved'),
 (12, '2022-06-06 09:16:19', 'Other Type', 'Table damaged', 'Solved'),
 (13, '2022-06-06 15:40:46', 'Other Type', 'College facilities ', 'Resolved'),
@@ -74,10 +74,11 @@ INSERT INTO `complaint` (`id`, `date`, `complaintType`, `complaintDes`, `complai
 (16, '2022-06-06 17:51:21', 'Improper Setup', 'College facilities', 'Solved'),
 (18, '2022-06-06 18:07:10', 'Damaged Equipment', 'Machine cannot detect our matric card and the machine of matric card is damaged', 'In Investigation'),
 (20, '2022-06-06 18:18:57', 'Damaged Equipment', 'whiteboard is damaged', 'Solved'),
-(21, '2022-06-11 18:15:35', 'Improper Setup', 'Lamp cannot be opened. ', ''),
-(22, '2022-06-11 18:16:20', 'Damaged Equipment', 'Fans not function well.', ''),
-(23, '2022-06-11 22:51:37', 'Other Type', 'Syaza comel lagi cantik', ''),
-(24, '2022-06-12 13:23:37', 'Damaged Equipment', 'ERROR', '');
+(21, '2022-06-11 18:15:35', 'Improper Setup', 'Lamp cannot be opened. ', 'In Investigation'),
+(22, '2022-06-11 18:16:20', 'Damaged Equipment', 'Fans not function well.', 'In Investigation'),
+(24, '2022-06-12 13:23:37', 'Damaged Equipment', 'ERROR', 'In Investigation'),
+(26, '2022-06-17 11:04:14', 'Damaged Equipment', 'Filed to open the 3D printer.', 'Resolved'),
+(28, '2022-06-17 11:32:16', 'Improper Setup', 'Mic', 'Resolved');
 
 -- --------------------------------------------------------
 
@@ -101,9 +102,15 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`id`, `category`, `roomname`, `status`, `location`, `date`, `tic`, `setup`) VALUES
-(7, 'LECTURE HALL', 'LH1134', 'ASSIGNED', 'BLOCK A', '2022-06-04', 'JIMMY', 'setup tv and speaker'),
-(8, 'LAB', 'LB62', 'ASSIGNED', 'BLOCK D', '2022-06-18', 'FARIS', ''),
-(9, 'LECTURE HALL', 'LH1131', 'AVAILABLE', 'BLOCK A', '2022-06-14', 'NO ONE', '');
+(12, 'LECTURE HALL', 'LH1133', 'AVAILABLE', 'BLOCK A', '2022-06-24', 'NO ONE', ''),
+(13, 'LAB', 'LB64', 'AVAILABLE', 'BLOCK A', '2022-06-18', 'NO ONE', ''),
+(14, 'LAB', 'LB62', 'AVAILABLE', 'BLOCK C', '2022-06-23', 'NO ONE', ''),
+(15, 'MEETING ROOM', 'MR03', 'BOOKED', 'BLOCK E', '2022-08-18', 'NO ONE', ''),
+(16, 'MEETING ROOM', 'MR04', 'AVAILABLE', 'BLOCK D', '2022-06-23', 'NO ONE', ''),
+(17, 'LECTURE HALL', 'LH1131', 'NOT AVAILABLE', 'BLOCK A', '2022-06-14', 'NO ONE', 'BROKEN AIRCOND'),
+(18, 'LAB', 'LB62', 'BOOKED', 'BLOCK E', '2022-06-30', 'NO ONE', ''),
+(19, 'MEETING ROOM', 'MR05', 'AVAILABLE', 'BLOCK D', '2022-07-23', 'NO ONE', ''),
+(20, 'LAB', 'LB63', 'BOOKED', 'BLOCK C', '2022-06-30', 'NO ONE', '');
 
 -- --------------------------------------------------------
 
@@ -127,7 +134,7 @@ CREATE TABLE `setup` (
 --
 
 INSERT INTO `setup` (`id`, `Name`, `No_ID`, `Phone_Number`, `Date`, `Faculty`, `Room_Name`, `Requirement`) VALUES
-(18, 'XUAN', 'AS12345', '01156536854', '2022-06-04', 'FK', 'LH1134', 'setup tv and speaker');
+(21, 'Ahmad Sulaiman', 'C1256', '0123834778', '2022-06-17', 'FKom', 'LH1131', 'Setup laptop and projector');
 
 -- --------------------------------------------------------
 
@@ -152,8 +159,6 @@ INSERT INTO `technician` (`id`, `username`, `email`, `password`, `reg_date`, `up
 (1, 'technichum19', 'tehcnichum@gmail.com', 'technichum1234', '2022-06-05 19:27:17', '2022-06-01'),
 (19, 'zunnur19', 'zunnurafzan@gmail.com', '12345678', '2022-06-01 00:37:25', '2022-06-06'),
 (20, 'faris24', 'faris@gmail.com', 'faris123', '2022-06-07 03:52:43', '0000-00-00'),
-(21, 'Zakwan05', 'zakwan@gmail.com', 'zakwan1234', '2022-06-07 03:59:25', '0000-00-00'),
-(22, 'syazatul', 'syaaaza@gmail.com', 'syaza1234', '2022-06-12 06:21:55', '0000-00-00'),
 (24, 'jimmy', 'jimmy@gmail.com', 'jim123', '2022-06-12 06:27:27', '0000-00-00');
 
 -- --------------------------------------------------------
@@ -177,11 +182,6 @@ CREATE TABLE `userlog` (
 --
 
 INSERT INTO `userlog` (`id`, `userId`, `userEmail`, `userIp`, `city`, `country`, `loginTime`) VALUES
-(1, 10, 'test@gmail.com', '', '', '', '2016-06-22 06:16:42'),
-(2, 10, 'test@gmail.com', '', '', '', '2016-06-24 11:20:28'),
-(4, 10, 'test@gmail.com', 0x3a3a31, '', '', '2016-06-24 11:22:47'),
-(5, 10, 'test@gmail.com', 0x3a3a31, '', '', '2016-06-26 15:37:40'),
-(6, 20, 'Benjamin@gmail.com', 0x3a3a31, '', '', '2016-06-26 16:40:57'),
 (7, 10, 'test@gmail.com', 0x3a3a31, '', '', '2022-06-11 21:40:36'),
 (8, 10, 'test@gmail.com', 0x3a3a31, '', '', '2022-06-11 21:47:35'),
 (9, 10, 'test@gmail.com', 0x3a3a31, '', '', '2022-06-11 21:56:35'),
@@ -208,7 +208,21 @@ INSERT INTO `userlog` (`id`, `userId`, `userEmail`, `userIp`, `city`, `country`,
 (30, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-12 13:20:44'),
 (31, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-12 14:09:23'),
 (32, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-12 14:18:21'),
-(33, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-12 14:30:22');
+(33, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-12 14:30:22'),
+(34, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-12 14:37:58'),
+(35, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-12 14:41:21'),
+(36, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-12 14:42:53'),
+(37, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-12 18:51:57'),
+(38, 24, 'sulai@gmail.com', 0x3a3a31, '', '', '2022-06-13 16:41:30'),
+(39, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-13 17:15:21'),
+(40, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-13 17:20:10'),
+(41, 25, 'sulaiman@gmail.com', 0x3a3a31, '', '', '2022-06-13 17:29:59'),
+(42, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-14 00:38:25'),
+(43, 29, 'sulaiman10@gmail.com', 0x3a3a31, '', '', '2022-06-14 00:48:41'),
+(44, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-17 10:24:43'),
+(45, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-18 14:24:13'),
+(46, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-20 10:14:31'),
+(47, 21, 'xuan@gmail.com', 0x3a3a31, '', '', '2022-06-20 10:18:04');
 
 -- --------------------------------------------------------
 
@@ -218,7 +232,6 @@ INSERT INTO `userlog` (`id`, `userId`, `userEmail`, `userIp`, `city`, `country`,
 
 CREATE TABLE `userregistration` (
   `id` int(11) NOT NULL,
-  `regNo` varchar(255) NOT NULL,
   `firstName` varchar(255) NOT NULL,
   `middleName` varchar(255) NOT NULL,
   `lastName` varchar(255) NOT NULL,
@@ -235,8 +248,9 @@ CREATE TABLE `userregistration` (
 -- Dumping data for table `userregistration`
 --
 
-INSERT INTO `userregistration` (`id`, `regNo`, `firstName`, `middleName`, `lastName`, `gender`, `contactNo`, `email`, `password`, `regDate`, `updationDate`, `passUdateDate`) VALUES
-(21, '12345', 'HOH', 'JIA', 'XUAN', 'female', 1156536854, 'xuan@gmail.com', 'xuan123', '2022-06-12 08:21:40', '', '');
+INSERT INTO `userregistration` (`id`, `firstName`, `middleName`, `lastName`, `gender`, `contactNo`, `email`, `password`, `regDate`, `updationDate`, `passUdateDate`) VALUES
+(21, 'HOH', 'JIA', 'XUAN', 'female', 1156536854, 'xuan@gmail.com', 'xuan123', '2022-06-12 08:21:40', '20-06-2022 03:49:33', ''),
+(29, 'Ahmad', 'Sulaiman', 'Zurkifli', 'male', 1125609220, 'sulaiman10@gmail.com', 'sulai10', '2022-06-14 00:48:17', '', '');
 
 --
 -- Indexes for dumped tables
@@ -292,43 +306,43 @@ ALTER TABLE `userregistration`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `setup`
 --
 ALTER TABLE `setup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `technician`
 --
 ALTER TABLE `technician`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `userlog`
 --
 ALTER TABLE `userlog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `userregistration`
 --
 ALTER TABLE `userregistration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
